@@ -1,54 +1,15 @@
-$(document)
-  .ready(function() {
+$(document).ready(function() {
+  $('#merge').on('click', function (e) {
+    var o = $('#original').val();
 
-    $('.ui:not(.container, .grid)').each(function() {
-      $(this)
-        .popup({
-          on        : 'hover',
-          variation : 'small inverted',
-          exclusive : true,
-          content   : $(this).attr('class')
-        })
-      ;
-    });
+    var a = $('#one').val();
+    var b = $('#two').val();
+    var c = $('#three').val();
+    var d = $('#four').val();
 
-    $('.ui.menu .ui.dropdown').dropdown({
-      on: 'hover'
-    });
-    $('.ui.menu a.item')
-      .on('click', function() {
-        $(this)
-          .addClass('active')
-          .siblings()
-          .removeClass('active')
-        ;
-      })
-    ;
+    var m = o.replace('@@',a).replace('##',b).replace('$$',c).replace('%%',d);
+    $('#merged').val(m);
 
-    $('.ui.dropdown').dropdown();
 
-    $('.ui.dropdown')
-        .dropdown({
-          on: 'click'
-        })
-      ;
-
-    $('.ui.buttons .dropdown.button').dropdown({
-      action: 'combo'
-    });
-
-    $('.special.card .image').dimmer({
-      on: 'hover'
-    });
-
-    $('.star.rating')
-      .rating()
-    ;
-    $('.card .dimmer')
-      .dimmer({
-        on: 'hover'
-      })
-    ;
-
-  })
-;
+  });
+});
