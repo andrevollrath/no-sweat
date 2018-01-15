@@ -9,7 +9,15 @@ $(document).ready(function() {
 
     var m = o.replace('@@',a).replace('##',b).replace('$$',c).replace('%%',d);
     $('#merged').val(m);
+  });
 
 
+  $('#copy').on('click', function (e) {
+    if ($('#merged').val() == ''){
+      alert('Please complete merge 1st!')
+    }
+    else{
+      var clipboard = new Clipboard('#copy');
+    }
   });
 });

@@ -28,7 +28,7 @@
       .ui.buttons
         %button#merge.ui.button Merge
         .or
-        %button#copy.ui.positive.button Copy
+        %button#copy.ui.positive.button(data-clipboard-action="cut" data-clipboard-target="#merged") Cut
 
     .divider_block
       ='------------------- %!# -------------------'

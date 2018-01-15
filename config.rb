@@ -9,6 +9,12 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
+# Use “pretty” URLs (without the `.html` suffix)
+activate :directory_indexes
+
+# Append hashes to compiled assets
+activate :asset_hash
+
 # With alternative layout
 # page "/path/to/file.html", layout: :otherlayout
 
